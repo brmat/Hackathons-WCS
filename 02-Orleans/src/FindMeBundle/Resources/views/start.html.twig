@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col offset-s1 s10">
+            <div class="col s12">
+                <h4>
+                    Bienvenue sur Find Me ! <br>
+                    <em>{{ app.user.username }}</em>
+                </h4>
+            </div>
+            <div class="col offset-s1 s10 center">
+                <h6><strong>Voulez-vous proposez un indice ou enquêter ?</strong></h6>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s4 ">
+            <a class="waves-effect waves-light btn btnStart" href="{{ path('game_new') }}">
+                Meneur
+            </a>    {#  rediriger vers la liste des parties  #}
+        </div>
+        <div class="col offset-s2 s4 ">
+            <a class="waves-effect waves-light btn btnStart" href="{{ path('game_index') }}">
+                Enquêteur
+            </a>
+        </div>
+    </div>
+    {{ parent() }}
+
+{% endblock %}
+{% block content %}
+
+
+{% endblock %}
+

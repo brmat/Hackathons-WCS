@@ -1,0 +1,30 @@
+FindMeBundle\Entity\ImageSend:
+    type: entity
+    table: null
+    repositoryClass: FindMeBundle\Repository\ImageSendRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            column: Name
+
+    lifecycleCallbacks:
+        prePersist: [ preUpload, setCreatedAtValue, setExpiresAtValue ]
+        preUpdate: [ preUpload, setUpdatedAtValue ]
+        postPersist: [ upload ]
+        postUpdate: [ upload ]
+        postRemove: [ removeUpload ]
+
+    manyToOne:
+        image:
+            targetEntity: FindMeBundle\Entity\User
+            inversedBy: imageSends
+        imageSends:
+            targetEntity: FindMeBundle\Entity\Game
+            inversedBy: image

@@ -1,0 +1,5 @@
+FindMeBundle\Entity\ImageSend:
+    properties:
+        # ...
+        file:
+            - Image: ~

@@ -1,0 +1,21 @@
+LicoboxBundle\Entity\t_licorne:
+    type: entity
+    table: null
+    repositoryClass: LicoboxBundle\Repository\t_licorneRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+    manyToOne:
+          address:
+            targetEntity: LicoboxBundle\Entity\habitat
+            joinColumn:
+              name: habitat_id
+              referencedColumnName: id

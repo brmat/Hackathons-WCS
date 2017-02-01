@@ -1,0 +1,4 @@
+services:
+#    find_me.example:
+#        class: FindMeBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

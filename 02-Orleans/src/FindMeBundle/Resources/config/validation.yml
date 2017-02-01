@@ -1,0 +1,5 @@
+FindMeBundle\Entity\Game:
+    properties:
+        # ...
+        file:
+            - Image: ~

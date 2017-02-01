@@ -1,0 +1,24 @@
+name_index:
+    path:     /
+    defaults: { _controller: "LicoboxBundle:name:index" }
+    methods:  GET
+
+name_show:
+    path:     /{id}/show
+    defaults: { _controller: "LicoboxBundle:name:show" }
+    methods:  GET
+
+name_new:
+    path:     /new
+    defaults: { _controller: "LicoboxBundle:name:new" }
+    methods:  [GET, POST]
+
+name_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "LicoboxBundle:name:edit" }
+    methods:  [GET, POST]
+
+name_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "LicoboxBundle:name:delete" }
+    methods:  DELETE

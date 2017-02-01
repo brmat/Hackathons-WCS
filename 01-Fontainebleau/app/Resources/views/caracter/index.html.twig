@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>caracter list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Eyes</th>
+                <th>Coat</th>
+                <th>Corn</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for caracter in caracters %}
+            <tr>
+                <td><a href="{{ path('caracter_show', { 'id': caracter.id }) }}">{{ caracter.id }}</a></td>
+                <td>{{ caracter.eyes }}</td>
+                <td>{{ caracter.coat }}</td>
+                <td>{{ caracter.corn }}</td>
+                <td>{% if caracter.date %}{{ caracter.date|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('caracter_show', { 'id': caracter.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('caracter_edit', { 'id': caracter.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('caracter_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

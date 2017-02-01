@@ -1,0 +1,11 @@
+licobox_caracter:
+    resource: "@LicoboxBundle/Resources/config/routing/caracter.yml"
+    prefix:   /caracter
+
+licobox_name:
+        resource: "@LicoboxBundle/Resources/config/routing/name.yml"
+        prefix:   /name
+        
+licobox_homepage:
+    path:     /
+    defaults: { _controller: LicoboxBundle:Default:index }

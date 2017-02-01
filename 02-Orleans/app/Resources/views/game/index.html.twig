@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col s12">
+            <h4>Liste des parties en cours</h4>
+        </div>
+    </div>
+
+    <div class="row ss-titre">
+        <div class="col s2">
+            Partie
+        </div>
+        <div class="col s6">
+            Photo
+        </div>
+        <div class="col s2">
+            Nom de la partie
+        </div>
+        <div class="col s2">
+            Action
+        </div>
+    </div>
+    {% for game in games %}
+           <div class="row">
+               <div class="col s2">
+                   {{ game.name }}
+               </div>
+               <div class="col s6">
+                   <img class="small" src="{{ asset('/uploads/photo/') }}{{ game.photo }}" alt="{{ game.photo }}">
+
+               </div>
+               <div class="col s2">
+                   {{ game.indice }}
+               </div>
+               <div class="col s2">
+                   <a href="{{ path('game_show', { 'id': game.id }) }}">
+                       Voir
+                   </a>
+               </div>
+           </div>
+        {% endfor %}
+    {{ parent() }}
+
+{% endblock %}

@@ -1,0 +1,24 @@
+game_index:
+    path:     /
+    defaults: { _controller: "FindMeBundle:Game:index" }
+    methods:  GET
+
+game_show:
+    path:     /{id}/show
+    defaults: { _controller: "FindMeBundle:Game:show" }
+    methods:  GET
+
+game_new:
+    path:     /new
+    defaults: { _controller: "FindMeBundle:Game:new" }
+    methods:  [GET, POST]
+
+game_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FindMeBundle:Game:edit" }
+    methods:  [GET, POST]
+
+game_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FindMeBundle:Game:delete" }
+    methods:  DELETE

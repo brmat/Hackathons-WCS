@@ -1,0 +1,83 @@
+<?php
+
+namespace LicoboxBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * lico
+ */
+class lico
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var int
+     */
+    private $idLico;
+
+    /**
+     * @var string
+     */
+    private $type;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set idLico
+     *
+     * @param integer $idLico
+     * @return lico
+     */
+    public function setIdLico($idLico)
+    {
+        $this->idLico = $idLico;
+
+        return $this;
+    }
+
+    /**
+     * Get idLico
+     *
+     * @return integer 
+     */
+    public function getIdLico()
+    {
+        return $this->idLico;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     * @return lico
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+}

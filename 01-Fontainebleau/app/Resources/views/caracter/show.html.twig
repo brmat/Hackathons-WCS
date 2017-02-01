@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>caracter</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ caracter.id }}</td>
+            </tr>
+            <tr>
+                <th>Eyes</th>
+                <td>{{ caracter.eyes }}</td>
+            </tr>
+            <tr>
+                <th>Coat</th>
+                <td>{{ caracter.coat }}</td>
+            </tr>
+            <tr>
+                <th>Corn</th>
+                <td>{{ caracter.corn }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if caracter.date %}{{ caracter.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('caracter_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('caracter_edit', { 'id': caracter.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

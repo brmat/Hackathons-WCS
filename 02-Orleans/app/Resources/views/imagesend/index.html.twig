@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Imagesends list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for imageSend in imageSends %}
+            <tr>
+                <td><a href="{{ path('imagesend_show', { 'id': imageSend.id }) }}">{{ imageSend.id }}</a></td>
+                <td>{{ imageSend.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('imagesend_show', { 'id': imageSend.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('imagesend_edit', { 'id': imageSend.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('imagesend_new') }}">Create a new imageSend</a>
+        </li>
+    </ul>
+{% endblock %}

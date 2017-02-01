@@ -1,0 +1,19 @@
+FindMeBundle\Entity\Cluster:
+    type: entity
+    table: null
+    repositoryClass: FindMeBundle\Repository\ClusterRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }
+
+
+
+    manyToMany:
+        users:
+            targetEntity: User
+            mappedBy: clusters
+

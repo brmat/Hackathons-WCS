@@ -1,0 +1,29 @@
+LicoboxBundle\Entity\caracter:
+    type: entity
+    table: null
+    repositoryClass: LicoboxBundle\Repository\caracterRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        eyes:
+            type: string
+            length: 255
+        coat:
+            type: string
+            length: 255
+        corn:
+            type: string
+            length: 255
+        date:
+            type: date
+    lifecycleCallbacks: {  }
+    oneToOne:
+        shipping:
+          targetEntity: LicoboxBundle\Entity\name
+          joinColumn:
+            name: name_id
+            referencedColumnName: id

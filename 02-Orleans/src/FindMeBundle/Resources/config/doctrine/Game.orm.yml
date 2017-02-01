@@ -1,0 +1,43 @@
+FindMeBundle\Entity\Game:
+    type: entity
+    table: null
+    repositoryClass: FindMeBundle\Repository\GameRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        photo:
+            type: text
+        indice:
+            type: string
+            length: 255
+
+    lifecycleCallbacks:
+        prePersist: [ preUpload ]
+        preUpdate: [ preUpload ]
+        postPersist: [ upload ]
+        postUpdate: [ upload ]
+        postRemove: [ removeUpload ]
+
+    oneToMany:
+        imageSends:
+            targetEntity: FindMeBundle\Entity\ImageSend
+            mappedBy: image
+
+    manyToOne:
+        winner:
+            targetEntity: User
+            inversedBy: winners
+        author:
+            targetEntity: User
+            inversedBy: authors
+        level:
+            targetEntity: Level
+            inversedBy: levels
+

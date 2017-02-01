@@ -1,0 +1,57 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col offset-s1 s10">
+            <div class="row">
+                <h4>
+                    Validation
+                </h4>
+            </div>
+            <div class="row contenu">
+                <div class="col s12">
+                    <p>
+                        Proposition de : {{ app.user.username }}
+                    </p>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="{{ asset('bundles/findme/images/indice1JPG') }}" alt="test1"/>
+                                </div>
+                                <div class="card-content">
+                                    <p>
+                                        Votre image
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="media image-right right" src="{{ asset('bundles/findme/images/tour1JPG') }}" alt="test1"/>
+                                </div>
+                                <div class="card-content">
+                                    <p>
+                                        Valider ?
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="col s1">
+                                        <a href="{{ path('game_index') }}"><i class="material-icons">done</i></a>
+                                    </div>
+                                    <div class="col offset-s4 s1">
+                                        <a href="{{ path('game_index') }}"><i class="material-icons">not_interested</i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ parent() }}
+{% endblock body %}

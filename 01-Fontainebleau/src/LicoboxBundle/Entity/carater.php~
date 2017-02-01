@@ -1,0 +1,195 @@
+<?php
+
+namespace LicoboxBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * carater
+ */
+class carater
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var int
+     */
+    private $idName;
+
+    /**
+     * @var int
+     */
+    private $idCaracter;
+
+    /**
+     * @var string
+     */
+    private $eyes;
+
+    /**
+     * @var string
+     */
+    private $coat;
+
+    /**
+     * @var string
+     */
+    private $corn;
+
+    /**
+     * @var \DateTime
+     */
+    private $date;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set idName
+     *
+     * @param integer $idName
+     * @return carater
+     */
+    public function setIdName($idName)
+    {
+        $this->idName = $idName;
+
+        return $this;
+    }
+
+    /**
+     * Get idName
+     *
+     * @return integer 
+     */
+    public function getIdName()
+    {
+        return $this->idName;
+    }
+
+    /**
+     * Set idCaracter
+     *
+     * @param integer $idCaracter
+     * @return carater
+     */
+    public function setIdCaracter($idCaracter)
+    {
+        $this->idCaracter = $idCaracter;
+
+        return $this;
+    }
+
+    /**
+     * Get idCaracter
+     *
+     * @return integer 
+     */
+    public function getIdCaracter()
+    {
+        return $this->idCaracter;
+    }
+
+    /**
+     * Set eyes
+     *
+     * @param string $eyes
+     * @return carater
+     */
+    public function setEyes($eyes)
+    {
+        $this->eyes = $eyes;
+
+        return $this;
+    }
+
+    /**
+     * Get eyes
+     *
+     * @return string 
+     */
+    public function getEyes()
+    {
+        return $this->eyes;
+    }
+
+    /**
+     * Set coat
+     *
+     * @param string $coat
+     * @return carater
+     */
+    public function setCoat($coat)
+    {
+        $this->coat = $coat;
+
+        return $this;
+    }
+
+    /**
+     * Get coat
+     *
+     * @return string 
+     */
+    public function getCoat()
+    {
+        return $this->coat;
+    }
+
+    /**
+     * Set corn
+     *
+     * @param string $corn
+     * @return carater
+     */
+    public function setCorn($corn)
+    {
+        $this->corn = $corn;
+
+        return $this;
+    }
+
+    /**
+     * Get corn
+     *
+     * @return string 
+     */
+    public function getCorn()
+    {
+        return $this->corn;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return carater
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+}

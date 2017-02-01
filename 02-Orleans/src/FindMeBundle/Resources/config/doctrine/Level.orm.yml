@@ -1,0 +1,16 @@
+FindMeBundle\Entity\Level:
+    type: entity
+    table: null
+    repositoryClass: FindMeBundle\Repository\LevelRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }
+
+    oneToMany:
+        levels:
+            targetEntity: Game
+            mappedBy: level

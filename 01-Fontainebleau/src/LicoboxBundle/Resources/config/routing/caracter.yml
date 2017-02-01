@@ -1,0 +1,24 @@
+caracter_index:
+    path:     /
+    defaults: { _controller: "LicoboxBundle:caracter:index" }
+    methods:  GET
+
+caracter_show:
+    path:     /{id}/show
+    defaults: { _controller: "LicoboxBundle:caracter:show" }
+    methods:  GET
+
+caracter_new:
+    path:     /new
+    defaults: { _controller: "LicoboxBundle:caracter:new" }
+    methods:  [GET, POST]
+
+caracter_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "LicoboxBundle:caracter:edit" }
+    methods:  [GET, POST]
+
+caracter_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "LicoboxBundle:caracter:delete" }
+    methods:  DELETE

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h4>Jeu en cours</h4>
+<div class="row">
+    <div class="col s12">
+        <div class="row">
+            <div class="col s4 ss-titre">
+                Nom de la partie
+            </div>
+            <div class="col s4">
+                {{ game.name }}
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col s4 ss-titre textePhoto">
+                <p>
+                    Voici l'image à retrouver
+                </p>
+            </div>
+            <div class="col s6">
+                <img class="medium" src="{{ asset('/uploads/photo/') }}{{ game.photo }}" alt="{{ game.photo }}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3 ss-titre">
+                Indice
+            </div>
+            <div class="col s4">
+                {{ game.indice }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s4 ss-titre">
+                Participants
+            </div>
+            <div class="col s4">
+               {# {% for user in game.users %}
+                    <td>
+                        {{ user.username }}
+                    </td>
+                {% endfor %}#}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <a class="waves-effect waves-light btn" href="{{ path('find_me_start') }}">
+                    Rejoindre la partie
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                {{ form_start(delete_form) }}
+                <a class="waves-effect waves-light btn">
+                    <input type="submit" value="Abandonner la partie">
+                </a>
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+    {{ parent() }}
+
+{% endblock %}

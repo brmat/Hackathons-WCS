@@ -1,0 +1,34 @@
+FindMeBundle\Entity\User:
+    type:  entity
+    table: fos_user
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+
+    fields:
+        points:
+            type: integer
+            nullable: true
+
+    oneToMany:
+        winners:
+            targetEntity: FindMeBundle\Entity\Game
+            mappedBy: winner
+        authors:
+            targetEntity: FindMeBundle\Entity\Game
+            mappedBy: author
+        imageSends:
+            targetEntity: FindMeBundle\Entity\ImageSend
+            mappedBy: image
+
+    manyToMany:
+        clusters:
+            targetEntity: FindMeBundle\Entity\Cluster
+            inversedBy: users
+        games:
+            targetEntity: FindMeBundle\Entity\Game
+            inversedBy: users
+
+    lifecycleCallbacks: {  }
